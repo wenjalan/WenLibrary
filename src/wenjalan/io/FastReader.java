@@ -1,12 +1,13 @@
 package wenjalan.io;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channel;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 
-public class FastReader {
+public class FastReader implements Closeable {
 
     // the default buffer size
     private static final int DEFAULT_BUFFER_SIZE = 1024;
@@ -23,11 +24,15 @@ public class FastReader {
     // the next index to return
     private int nextIndex;
 
+    // whether this FastReader is closed
+    private boolean isClosed;
+
     // main constructor
     public FastReader(Channel channel, int bufferSize) {
         this.channel = channel;
         this.buffer = ByteBuffer.allocate(bufferSize);
         this.nextIndex = 0;
+        this.isClosed = false;
         read();
     }
 
@@ -80,6 +85,9 @@ public class FastReader {
 
     // returns the next byte of the data
     public byte next() throws IOException {
+        if (this.isClosed) {
+            throw new IllegalStateException("FastWriter is closed");
+        }
         if (data == null) {
             throw new IllegalStateException("Data hasn't been read in");
         }
@@ -94,7 +102,15 @@ public class FastReader {
 
     // returns whether we've reached the end of the data
     public boolean hasNext() {
+        if (this.isClosed) {
+            throw new IllegalStateException("FastWriter is closed");
+        }
         return nextIndex < data.length;
     }
 
+    @Override
+    public void close() throws IOException {
+        channel.close();
+        this.isClosed = true;
+    }
 }
