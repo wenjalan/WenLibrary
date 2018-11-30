@@ -1,33 +1,12 @@
 package wenjalan;
 
-import wenjalan.io.FastReader;
-
-import java.io.*;
-
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        Timer timer = new Timer(Timer.Unit.MILLISECOND).start();
-
-        FastReader reader = new FastReader(new RandomAccessFile(".gitattributes", "r").getChannel());
-        while (reader.hasNext()) {
-            System.out.print((char) reader.next());
-        }
-
-        System.out.println("Finished in " + timer.lap() + " ms");
-
-        timer.reset();
-
-        reader.
-
-        BufferedReader br = new BufferedReader(new FileReader(".gitattributes"));
-        String s = br.readLine();
-        while (s != null) {
-            System.out.println(s);
-            s = br.readLine();
-        }
-
-        System.out.println("Finished in " + timer.lap() + " ms");
+    public static void main(String[] args) {
+        String alan100 = StringUtils.appendMult("alan", 5);
+        byte digit = NumberUtils.getDigitAt(10, 0);
+        System.out.println(alan100);
+        System.out.println(digit);
     }
 
 }
