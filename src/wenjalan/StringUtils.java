@@ -3,7 +3,9 @@ package wenjalan;
 public class StringUtils {
 
     // non instantiable
-    private StringUtils() {}
+    private StringUtils() {
+        throw new AssertionError("class is non-instantiable");
+    }
 
     // returns the string appended to itself multiplier times
     // ex: appendMult("hello", 3) returns hellohellohello
