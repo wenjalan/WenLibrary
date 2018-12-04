@@ -1,4 +1,4 @@
-package wenjalan;
+package wenjalan.utils;
 
 import java.util.Arrays;
 import java.util.stream.DoubleStream;

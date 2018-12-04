@@ -1,9 +1,12 @@
 package wenjalan;
 
+import wenjalan.utils.NumberUtils;
+import wenjalan.utils.StringUtils;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(NumberUtils.getDigitAt(123_123_123_123_123L, 14));
+        System.out.println(StringUtils.truncateAt("hello world", 'o'));
     }
 
 }

@@ -1,4 +1,4 @@
-package wenjalan;
+package wenjalan.utils;
 
 public class NumberUtils {
 
