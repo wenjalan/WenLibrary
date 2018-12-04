@@ -48,6 +48,13 @@ public class FastWriter implements Closeable {
         bytesWritten++;
     }
 
+    // writes a String
+    public void write(String s) throws IOException {
+        for (char c : s.toCharArray()) {
+            write(c);
+        }
+    }
+
     // flushes the buffer into the channel
     public void flush() throws IOException {
         if (this.isClosed) {
@@ -65,6 +72,7 @@ public class FastWriter implements Closeable {
             throw new UnsupportedOperationException("Unsupported channel type: " + channel.getClass());
         }
         byteBuffer.clear();
+        bytesWritten = 0;
     }
 
     // returns if this writer is closed
