@@ -3,6 +3,8 @@ Using the same code to achieve different things.
 
 # Features
 Timer: A timer to benchmark the execution duration of programs.
+IO: FastWriter and FastReader for easy NIO implementation.
+Utils: Various utils for handling data in different forms.
 
 # Download
 Download the latest version here: https://github.com/wenjalan/WenLibrary/blob/master/out/artifacts/WenLibrary_jar/WenLibrary.jar
