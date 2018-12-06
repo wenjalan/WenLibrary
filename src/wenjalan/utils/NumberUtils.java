@@ -20,4 +20,34 @@ public class NumberUtils {
         return ("" + num).length();
     }
 
+    // returns the square of the number
+    public static long square(long n) {
+        return (long) Math.pow(n, 2);
+    }
+
+    // returns the square of the double
+    public static double square(double n) {
+        return (double) Math.pow(n, 2);
+    }
+
+    // returns the square of the float
+    public static float square(float n) {
+        return (float) Math.pow(n, 2);
+    }
+
+    // returns the cube of the number
+    public static long cube(long n) {
+        return (long) Math.pow(n, 3);
+    }
+
+    // returns the cube of the double
+    public static double cube(double n) {
+        return (double) Math.pow(n, 3);
+    }
+
+    // returns the cube of the float
+    public static float cube(float n) {
+        return (float) Math.pow(n, 3);
+    }
+
 }

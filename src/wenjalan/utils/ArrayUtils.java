@@ -115,7 +115,7 @@ public class ArrayUtils {
         return ret;
     }
 
-    public static boolean[] toPrimitiveArray(boolean[] a) {
+    public static boolean[] toPrimitiveArray(Boolean[] a) {
         boolean[] ret = new boolean[a.length];
         for (int i = 0; i < a.length; i++) {
             ret[i] = a[i];
